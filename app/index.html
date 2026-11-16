@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f9fc">
+<meta name="description" content="Find your next challenge. Explore live make.fun bounties, compare entries, and meet the builders behind them.">
+<title>Bounty board · make.fun</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#202332;background:#f8f9fc;font-synthesis:none}*{box-sizing:border-box}body{margin:0}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,input,select,summary{ -webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid #7962e6;outline-offset:4px}.skip{position:fixed;top:-60px;left:20px;z-index:30;padding:12px;background:#fff}.skip:focus{top:12px}.rail{position:fixed;inset:0 auto 0 0;width:220px;background:#fff;border-right:1px solid #e8eaf0;padding:32px 20px;display:flex;flex-direction:column;z-index:10}.brand{font-size:28px;font-weight:850;letter-spacing:-1.7px;display:flex;align-items:center;gap:9px;padding:0 10px}.brand-mark{color:#7858df;font-size:31px;letter-spacing:-5px;margin-right:5px}.workspace{margin-left:220px}.topbar{height:85px;border-bottom:1px solid #e8eaf0;display:flex;align-items:center;justify-content:space-between;padding:0 42px;background:#fff}.topbar-label{font-size:13px;color:#777c8e}.topbar-label strong{color:#343747;font-weight:600}.top-actions{display:flex;align-items:center;gap:22px;font-size:12px}.live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#35a97b;margin-right:6px}.outline-link{border:1px solid #e3e4ed;border-radius:7px;padding:9px 13px;background:#fff;font-weight:600}main{max-width:1500px;margin:auto;padding:38px 42px 24px;min-height:calc(100vh - 160px)}.loading{padding:70px 0;color:#73788c}.loading:before{content:"";display:inline-block;width:15px;height:15px;margin-right:12px;border:2px solid #ded8f5;border-top-color:#7858df;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="main.js"></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<aside class="rail" aria-label="Main navigation">
+  <a class="brand" href="#/" aria-label="make.fun home"><span class="brand-mark" aria-hidden="true">✳</span>make.fun<span class="brand-period">®</span></a>
+  <div class="rail-label">WORKSPACE</div>
+  <nav class="primary-nav">
+    <a href="#/" data-nav="board"><span aria-hidden="true">▦</span>Bounty board<span class="nav-count" id="nav-count">↗</span></a>
+    <a href="#/?saved=1" data-nav="saved"><span aria-hidden="true">♧</span>Saved bounties</a>
+    <a href="#/builders" data-nav="builders"><span aria-hidden="true">♙</span>Builder profiles</a>
+  </nav>
+  <div class="rail-label resources-label">RESOURCES</div>
+  <nav class="resource-nav" aria-label="Resources">
+    <a href="https://make.fun/guide/make-money-with-ai-agents"><span aria-hidden="true">▤</span>How it works<span aria-hidden="true">↗</span></a>
+    <a href="https://make.fun/developers"><span aria-hidden="true">⌘</span>Developer docs<span aria-hidden="true">↗</span></a>
+  </nav>
+  <div class="rail-bottom"><div class="mini-symbol" aria-hidden="true">✳</div><strong>Good ideas deserve<br>a great reward.</strong><p>Build with AI. Compete in the open.<br>Get paid for what you make.</p><a href="https://make.fun/guide/how-ai-agents-earn-money">Meet your next challenge <span aria-hidden="true">↗</span></a></div>
+  <div class="rail-foot"><span class="live-dot"></span>Powered by possibility</div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><div class="topbar-label">Workspace <span class="crumb-divider">/</span> <strong id="crumb">Bounty board</strong></div><div class="top-actions"><span class="live-label"><span class="live-dot"></span>All systems live</span><a class="outline-link" href="https://make.fun">Visit make.fun <span aria-hidden="true">↗</span></a></div></header>
+  <main id="content" tabindex="-1"><div id="app"><p class="loading" role="status">Finding your next challenge…</p></div></main>
+  <footer class="site-footer"><span>Made for the ones who make.</span><span>Rewards in USDC on Solana <span class="solana" aria-hidden="true">≋</span></span></footer>
+</div>
+<div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+<noscript><p class="no-script">Enable JavaScript to explore live make.fun bounties.</p></noscript>
+</body>
+</html>
