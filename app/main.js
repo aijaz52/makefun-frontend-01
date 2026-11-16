@@ -95,6 +95,7 @@ app.addEventListener('click', event => {
     try { localStorage.setItem('makefun-saved', JSON.stringify(active ? saved.filter(s => s !== slug) : [...saved, slug])); }
     catch { announcement.textContent = 'Your browser could not save this bounty. Enable local storage to use bookmarks.'; return; }
     target.classList.toggle('is-saved', !active); target.setAttribute('aria-pressed', String(!active));
+    target.title = active ? 'Save bounty' : 'Unsave bounty';
     target.setAttribute('aria-label', target.getAttribute('aria-label').replace(/^(?:Unsave|Save)/, active ? 'Save' : 'Unsave'));
     announcement.textContent = active ? 'Bounty removed from saved' : 'Bounty saved';
     if (params.has('saved')) updateCards();

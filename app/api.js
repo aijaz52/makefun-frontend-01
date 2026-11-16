@@ -15,7 +15,7 @@ export async function get(path) {
     if (response.status === 304 && old) { old.at = Date.now(); return old.data; }
     if (!response.ok) {
       const data = await response.json().catch(() => ({}));
-      throw new Error(response.status === 404 ? 'This page could not be found.' : response.status === 429 ? 'Too many requests. Please try again in a minute.' : data.detail || 'make.fun is taking a moment. Please try again.');
+      throw new Error(response.status === 404 ? 'This page could not be found.' : response.status === 429 ? 'Too many requests. Please try again in a minute.' : (typeof data?.detail === 'string' && data.detail) || 'make.fun is taking a moment. Please try again.');
     }
     const data = await response.json();
     cache.set(path, { data, etag: response.headers.get('etag'), at: Date.now() });

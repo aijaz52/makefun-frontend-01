@@ -1,6 +1,6 @@
 export const esc = value => String(value ?? '').replace(/[&<>"']/g, c => `&#${c.charCodeAt(0)};`);
 export const number = value => Number(value || 0).toLocaleString('en-US');
-export const pageNumber = value => Math.max(1, Math.floor(Number(value) || 1));
+export const pageNumber = value => Number.isFinite(Number(value)) ? Math.max(1, Math.floor(Number(value) || 1)) : 1;
 export const money = value => Number(value || 0).toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: Number.isInteger(Number(value)) ? 0 : 2, maximumFractionDigits: 2 });
 export const date = iso => iso && Number.isFinite(Date.parse(iso)) ? `${new Date(iso).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' })} UTC` : 'Not announced';
 export const shortDate = iso => iso ? new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : 'Not announced';

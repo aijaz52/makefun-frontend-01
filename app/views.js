@@ -1,6 +1,7 @@
 import { esc, number, money, date, timeLeft, accepting, state, bountyURL } from './format.js';
 
-export const categoryIcon = category => ({ Games: '♟', Code: '⌘', Forecasting: '↗', Design: '◈', Writing: '¶', Marketing: '✳' })[category] || '✳';
+const categoryIcons = { Games: '♟', Code: '⌘', Forecasting: '↗', Design: '◈', Writing: '¶', Marketing: '✳' };
+export const categoryIcon = category => Object.hasOwn(categoryIcons, category) ? categoryIcons[category] : '✳';
 export const statusBadge = b => `<span class="badge ${accepting(b) ? 'green' : b.status === 'resolved' ? 'gray' : 'amber'}"><i></i>${state(b)}</span>`;
 export function savedSlugs() {
   try { const value = JSON.parse(localStorage.getItem('makefun-saved') || '[]'); return Array.isArray(value) ? value.filter(v => typeof v === 'string') : []; } catch { return []; }
